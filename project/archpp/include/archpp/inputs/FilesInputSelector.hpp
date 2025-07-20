@@ -29,11 +29,11 @@ namespace archpp::inputs
     {
         using namespace std::string_view_literals;
 
-        static constexpr std::string_view extensions[] = {".h"sv, ".hpp"sv, ".hxx"sv, ".hh"sv};
+        static constexpr std::string_view EXTENSIONS[] = {".h"sv, ".hpp"sv, ".hxx"sv, ".hh"sv};
         auto predicate = [](const std::string& filename)
         {
             return std::ranges::any_of(
-                extensions, [&filename](const auto& ext) { return filename.ends_with(ext); });
+                EXTENSIONS, [&filename](const auto& ext) { return filename.ends_with(ext); });
         };
         return std::make_shared<FileInputSelector>(std::move(predicate));
     }
@@ -42,11 +42,11 @@ namespace archpp::inputs
     {
         using namespace std::string_view_literals;
 
-        static constexpr std::string_view extensions[] = {".cpp"sv, ".cc"sv, ".cxx"sv, ".c"sv};
+        static constexpr std::string_view EXTENSIONS[] = {".cpp"sv, ".cc"sv, ".cxx"sv, ".c"sv};
         auto predicate = [](const std::string& filename)
         {
             return std::ranges::any_of(
-                extensions, [&filename](const auto& ext) { return filename.ends_with(ext); });
+                EXTENSIONS, [&filename](const auto& ext) { return filename.ends_with(ext); });
         };
         return std::make_shared<FileInputSelector>(std::move(predicate));
     }

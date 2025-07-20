@@ -30,7 +30,7 @@ namespace archpp::inputs
             return true;
         }
 
-    public:
+    private:
         DeclResult& m_Result;
         const FileInputSelector::predicate_type& m_Predicate;
         const cl::SourceManager& m_Sm;
