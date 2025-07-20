@@ -27,6 +27,7 @@ local extra_compiler_flags = {
 local function setup_project_test_framework()
     local switch = {
         ["boost"] = function ()
+            add_packages("boost", {public = false})
             add_headerfiles("include/archpp/test/adapters/TestRunner.Boost.hpp", {public = true})
         end,
         ["none"] = function()
@@ -38,7 +39,7 @@ end
 target("archpp")
     set_kind("static")
     add_packages("llvmlib", {public = true})
-
+    
     add_includedirs("include", {public = true})
     for _, header in ipairs(header_files) do
         add_headerfiles(header[1], header[2])
