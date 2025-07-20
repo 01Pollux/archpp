@@ -3,6 +3,7 @@
 #include <clang/Tooling/Tooling.h>
 #include <clang/Basic/Diagnostic.h>
 #include <clang/Tooling/CommonOptionsParser.h>
+#include <clang/Frontend/CompilerInstance.h>
 
 #include <iostream>
 
