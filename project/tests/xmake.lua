@@ -41,6 +41,7 @@ for _, cur_path in ipairs(paths) do
             add_files(file)
 
             add_filegroups("", {rootdir = cur_path})
+            add_tests("default")
         target_end()
     end
 
