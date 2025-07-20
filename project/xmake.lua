@@ -1,9 +1,8 @@
-includes("packages/xmake.lua")
-
-includes("archpp/xmake.lua")
+includes("packages")
+includes("archpp")
 
 if is_config("with-tests", true) then
-    includes("tests/xmake.lua")
+    includes("tests")
 end
 
 target("app")
